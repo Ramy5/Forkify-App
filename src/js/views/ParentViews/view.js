@@ -43,7 +43,7 @@ export default class View {
   }
 
   convertHttpToHttps() {
-    this._data.img.replace("http", "https");
+    return this._data.img.replace("http", "https");
   }
 
   _clear() {
