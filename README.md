@@ -2,14 +2,14 @@
 Searching for recipes food, get the results from api, display these results, bookmarking favorite recipes, using local storage to store them, using classes, modules, promises, async-await, parcel, project architecture and more ;)
 
 ## Table of Contents
-- <a href="#packges">Packges and versions</a>
+- <a href="#packages">Packages and versions</a>
 - <a href="#information">Information</a>
 - <a href="#instructure">Instructure</a>
 - <a href="#preview">Preview</a>
 - <a href="#language">Languages and Tools</a>
 
 
-<h2 id="packges">Packges and versions</h2>
+<h2 id="packages">Packages and versions</h2>
 <ul>
   <li>Using API from jonas: https://forkify-api.herokuapp.com/v2</li>
   <li>Node ^16.14.2</li>
