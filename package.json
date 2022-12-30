@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "\"search for food\"",
   "source": "./src/index.html",
-  "main": "./src/index.js",
   "scripts": {
     "start": "parcel",
     "build": "parcel build --dist-dir ./dist"
