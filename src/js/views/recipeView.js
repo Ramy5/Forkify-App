@@ -43,11 +43,11 @@ class RecipeView extends View {
   }
 
   _generateMarkup() {
-    const imgHttps = this._data.img.replace("http", "https");
-
     return `
       <div class="recipe__img">
-        <img src="${imgHttps}" alt="${this._data.title}" srcset="">
+        <img src="${this.convertHttpToHttps()}" alt="${
+      this._data.title
+    }" srcset="">
         <h2 class="recipe__name">
           <span>${this._data.title}</span>
         </h2>

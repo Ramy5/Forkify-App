@@ -11,7 +11,7 @@ class ResultsListView extends View {
       }">
         <a class="result__item-link reset__link" href="#${this._data.id}">
           <div class="result__img">
-          <img src="${this._data.img}" alt="${this._data.title}">
+          <img src="${this.convertHttpToHttps()}" alt="${this._data.title}">
           </div>
           <div class="result__description">
             <h4 class="result__name upper">${this._data.title}</h4>
