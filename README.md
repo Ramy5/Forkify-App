@@ -17,7 +17,6 @@ Searching for recipes food, get the results from api, display these results, boo
   <li>Parcel ^2.8.0</li>
   <li>Core js ^3.26.1</li>
   <li>regenerator-runtime ^0.13.11</li>
-  <li>Fractional ^1.0.0</li>
 </ul>
 
 <h2 id="information">Information</h2>
@@ -34,7 +33,7 @@ Searching for recipes food, get the results from api, display these results, boo
 3) Use <strong>npm install</strong> command to install node_module
 
 <h2 id="preview">Preview</h2>
-<h3>Live Preview: https://mapty-app5.netlify.app/</h3>
+<h3>Live Preview: https://forkify-app-clone.netlify.app/</h3>
 <div style="display:flex">
   <img style="width: 400px" src="https://user-images.githubusercontent.com/74501165/210080337-a5c639af-efb6-4461-8dc7-ae4d672f9242.png" alt="Preview">
   <img style="width: 400px" src="https://user-images.githubusercontent.com/74501165/210080358-c163bba1-fd70-464c-a642-507d67733ff0.png" alt="Preview">
