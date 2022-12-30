@@ -104,6 +104,7 @@ export const loadRecipe = async (id) => {
     // CHECK IF THERE ARE ANY RECIPE IN BOOKMARKS ARRAY WITH THE SAME ID OF THE CURRENT
     if (state.bookmarks.some((bookmark) => bookmark.id === id))
       state.recipe.bookmarked = true;
+    else state.recipe.bookmarked = false;
   } catch (err) {
     throw err;
   }
@@ -135,7 +136,7 @@ export const addBookmarks = (recipe) => {
   state.bookmarks.push(recipe);
 
   // SET THIS RECIPE AS BOOKMARKED
-  state.recipe.bookmarked = true;
+  if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
 
   // ADD BOOKMARKS TO LOCAL STORAGE
   bookmarksToLocal();
@@ -151,7 +152,7 @@ export const deleteBookmarks = (id) => {
   state.bookmarks.splice(index, 1);
 
   // SET THIS RECIPE AS NOT BOOKMARKED
-  state.recipe.bookmarked = false;
+  if (id === state.recipe.id) state.recipe.bookmarked = false;
 
   // ADD BOOKMARKS TO LOCAL STORAGE
   bookmarksToLocal();
