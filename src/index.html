@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Searching for food">
+  <title>Forkify App</title>
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- icon beside title -->
+  <link rel="shortcut icon" href="./img/favicon.png" type="icon/png" />
+  <!-- main style file -->
+  <link rel="stylesheet" href="./sass/forkify.scss" />
+  <!-- main script file -->
+  <script defer type="module" src="./js/controller.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- //////// UPLOAD RECIPE BY ADD RECIPE BUTTON //////// -->
+    <div class="upload__recipe">
+      <!-- OVERLAY -->
+      <div class="overlay hidden"></div>
+      <div class="upload d__flex-bt hidden">
+        <span class="upload__close">X</span>
+        <form>
+          <div class="main__data d__flex-bt">
+
+            <!-- RECIPE DATA -->
+            <div class="upload__recipe-data">
+              <h2 class="recipe__data-title upper">recipe data</h2>
+              <ul class="un-list">
+                <li class="d__flex-bt">
+                  <label data-name="title">Title</label>
+                  <input required name="title" type="text">
+                </li>
+                <li class="d__flex-bt">
+                  <label data-name="sourceUrl">URL</label>
+                  <input required name="sourceUrl" type="text">
+                </li>
+                <li class="d__flex-bt">
+                  <label data-name="img">Image URL</label>
+                  <input required name="img" type="text">
+                </li>
+                <li class="d__flex-bt">
+                  <label data-name="publisher">Publisher</label>
+                  <input required name="publisher" type="text">
+                </li>
+                <li class="d__flex-bt">
+                  <label data-name="cookingTime">Prep time</label>
+                  <input required name="cookingTime" type="number">
+                </li>
+                <li class="d__flex-bt">
+                  <label data-name="servings">Servings</label>
+                  <input required name="servings" type="number">
+                </li>
+              </ul>
+            </div>
+
+            <!-- INGREDIENT DATA -->
+            <div class="upload__ingredient-data">
+              <h2 class="ingredient__data-title upper">ingredients</h2>
+              <ul class="un-list">
+                <li class="d__flex-bt">
+                  <label data-name="ingredient-1">Ingredient 1</label>
+                  <div>
+                    <input type="number" name="ingredient-1" required placeholder="Quantity">
+                    <input type="text" name="ingredient-1" required placeholder="Unit">
+                    <input type="text" name="ingredient-1" required placeholder="Description">
+                  </div>
+                </li>
+                <li class="d__flex-bt">
+                  <label data-name="ingredient-2">Ingredient 2</label>
+                  <div>
+                    <input type="number" name="ingredient-2" placeholder="Quantity">
+                    <input type="text" name="ingredient-2" placeholder="Unit">
+                    <input type="text" name="ingredient-2" placeholder="Description">
+                  </div>
+                </li>
+                <li class="d__flex-bt">
+                  <label data-name="ingredient-3">Ingredient 3</label>
+                  <div>
+                    <input type="number" name="ingredient-3" placeholder="Quantity">
+                    <input type="text" name="ingredient-3" placeholder="Unit">
+                    <input type="text" name="ingredient-3" placeholder="Description">
+                  </div>
+                </li>
+                <li class="d__flex-bt">
+                  <label data-name="ingredient-4">Ingredient 4</label>
+                  <div>
+                    <input type="number" name="ingredient-4" placeholder="Quantity">
+                    <input type="text" name="ingredient-4" placeholder="Unit">
+                    <input type="text" name="ingredient-4" placeholder="Description">
+                  </div>
+                </li>
+                <li class="d__flex-bt">
+                  <label data-name="ingredient-5">Ingredient 5</label>
+                  <div>
+                    <input type="number" name="ingredient-5" placeholder="Quantity">
+                    <input type="text" name="ingredient-5" placeholder="Unit">
+                    <input type="text" name="ingredient-5" placeholder="Description">
+                  </div>
+                </li>
+                <li class="d__flex-bt">
+                  <label data-name="ingredient-6">Ingredient 6</label>
+                  <div>
+                    <input type="number" name="ingredient-6" placeholder="Quantity">
+                    <input type="text" name="ingredient-6" placeholder="Unit">
+                    <input type="text" name="ingredient-6" placeholder="Description">
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- UPLOAD BUTTON -->
+          <div>
+            <button class="btn upload__btn">
+              <svg class="search__icon">
+                <use href="img/icons.svg#icon-upload-cloud"></use>
+              </svg>
+              <span class="upper">upload</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- //////// UPLOAD RECIPE BY ADD RECIPE BUTTON //////// -->
+
+    <!-- //////// start navbar //////// -->
+    <nav class="nav">
+      <ul class="nav__list un-list d__flex-bt">
+        <li class="nav__img">
+          <img src="img/logo.png" alt="forkify" />
+        </li>
+        <li class="nav__search">
+          <form class="nav__form d__flex-c" action="">
+            <input class="search" type="text" placeholder="Search over 1,000,000 recipes..." />
+            <button class="btn search__btn">
+              <svg class="search__icon">
+                <use href="img/icons.svg#icon-search"></use>
+              </svg>
+              <span>Search</span>
+            </button>
+          </form>
+        </li>
+        <li class="nav__action d__flex-c">
+          <button class="action__btn recipe__btn">
+            <svg class="recipe__icon">
+              <use href="img/icons.svg#icon-edit"></use>
+            </svg>
+            <span>Add recipe</span>
+          </button>
+          <button class="action__btn bookmark__btn">
+            <svg class="bookmark__icon">
+              <use href="img/icons.svg#icon-bookmark"></use>
+            </svg>
+            <span>Bookmarks</span>
+          </button>
+          <!-- BOOKMARK POPUP -->
+          <div class="bookmarks__popup">
+            <ul class="results__list un-list"></ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <!-- //////// end navbar //////// -->
+
+    <main class="content d__flex">
+      <!-- //////// start sidebar (search results) //////// -->
+      <aside class="search__result">
+        <!-- rusults -->
+        <ul class="results__list un-list"></ul>
+
+        <section>
+          <!-- pagination -->
+          <div class="pagination d__flex-bt"></div>
+
+          <!-- copy right -->
+          <div class="copy__right">
+            <p>&copy; Copyright by <span>Jonas Schmedtmann</span></p>
+            <p>Created by
+              <span>
+                <a class="reset__link" href="https://www.linkedin.com/in/ramy-al-sabry-98637b202/" target="_blank">Ramy
+                  Sabry❤️</a>
+              </span>
+            </p>
+          </div>
+        </section>
+      </aside>
+      <!-- //////// end sidebar (search results) //////// -->
+
+      <!-- //////// start recipe details section //////// -->
+      <section class="recipe"></section>
+      <!-- //////// start recipe details section //////// -->
+    </main>
+  </div>
+
+</body>
+
+</html>

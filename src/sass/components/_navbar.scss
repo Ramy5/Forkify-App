@@ -1,0 +1,141 @@
+@use "./_base.scss" as *;
+@use "./searchResults.scss";
+
+.nav {
+  position: relative;
+  padding: 40px 0 0;
+
+  @media #{$minLarge} {
+    padding: 0;
+  }
+
+  &__list {
+    padding: 0 50px;
+    justify-content: space-around;
+
+    @media #{$maxMobail} {
+      padding: 0 2rem;
+    }
+
+    @media #{$minLarge} {
+      justify-content: space-between;
+    }
+
+    // image
+    .nav__img {
+      @media #{$maxMobail} {
+        display: none;
+      }
+
+      img {
+        width: 150px;
+        height: 48px;
+      }
+    }
+
+    // search
+    .nav__search {
+      .nav__form {
+        background-color: rgba(255, 255, 255, 0.986);
+        border-radius: $main__border-ra;
+        padding-left: 30px;
+        transition: $main__transition;
+        &:focus-within {
+          transform: translateY(-4px);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.09);
+        }
+
+        svg {
+          fill: #fff;
+        }
+
+        .search {
+          color: rgb(117, 116, 116);
+          width: 150px;
+          text-overflow: ellipsis;
+          border: none;
+          caret-color: currentColor;
+          font-size: 1.2rem;
+
+          @media (max-width: 377px) {
+            width: 135px;
+          }
+
+          @media (min-width: 378px) and (max-width: 767px) {
+            width: 150px;
+          }
+
+          @media #{$minSmall} {
+            width: 250px;
+          }
+
+          @media #{$minMedium} {
+            width: 350px;
+          }
+
+          &:focus {
+            outline: none;
+            background-color: #fff;
+          }
+
+          &::placeholder {
+            color: #d7d2cf;
+          }
+        }
+      }
+    }
+
+    .nav__action {
+      position: relative;
+      width: 100%;
+
+      @media #{$minLarge} {
+        width: auto;
+      }
+    }
+  }
+
+  // BOOKMARKS POPUP
+  .bookmarks__popup {
+    @extend .search__result;
+    // reset for extent
+    min-height: 100px;
+    border-bottom-left-radius: 0;
+    // reset for extent
+    width: calc(100% + 50px);
+    position: absolute;
+    top: 6.5rem;
+    left: 0;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+
+    @media (max-width: 377px) {
+      top: 13rem;
+    }
+
+    @media (min-width: 378px) and (max-width: 767px) {
+      top: 6.5rem;
+    }
+
+    @media #{$maxMobail} {
+      width: calc(100% + 2rem);
+    }
+
+    @media #{$minSmall} {
+      width: calc(50% + 50px);
+      left: 50%;
+    }
+
+    @media #{$minLarge} {
+      width: calc(100% + 50px);
+      left: 0;
+    }
+
+    &:hover {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

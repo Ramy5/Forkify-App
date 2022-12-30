@@ -1,0 +1,212 @@
+@use "./base.scss" as *;
+
+// for side bar (search results)
+.search__result {
+  width: 35%;
+  min-height: 100vh;
+  padding: 30px 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-bottom-left-radius: 10px;
+
+  @media #{$maxMobail} {
+    width: 100%;
+  }
+
+  // results
+  .result__item {
+    .result__item-link {
+      position: relative;
+      padding: $results__padd;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      transition: $main__transition;
+
+      @media #{$minSmall} {
+        padding: 1rem 1.5rem;
+      }
+
+      @media #{$minMedium} {
+        padding: $results__padd;
+      }
+
+      &:hover {
+        background-color: $main__hover;
+        transform: translateY(-5px);
+      }
+
+      .result__img {
+        position: relative;
+        flex: 0 0 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        margin-right: 20px;
+        overflow: hidden;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: block;
+          background-image: $main__gradient;
+          opacity: 0.4;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: all 0.4s;
+        }
+      }
+
+      .result__description {
+        // width: calc(100% - 60px);
+        @media (max-width: 514px) {
+          max-width: 100px;
+        }
+
+        @media (min-width: 515px) and (max-width: 767px) {
+          max-width: 250px;
+        }
+
+        @media #{$minSmall} {
+          max-width: 100px;
+        }
+
+        @media #{$minMedium} {
+          max-width: 150px;
+        }
+
+        .result__name {
+          color: $main__color;
+          font-weight: bold;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        p {
+          margin-top: 3px;
+          color: rgba($seconed__color, 0.8);
+          font-size: 0.9rem;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .upload__recipe-icon {
+        position: absolute;
+        right: 15px;
+      }
+    }
+  }
+
+  // pagination
+  .pagination {
+    width: 100%;
+    margin-top: 5rem;
+    margin-bottom: 10px;
+    padding: $results__padd;
+
+    @media #{$minSmall} {
+      padding: 1rem 1.5rem;
+    }
+
+    @media #{$minMedium} {
+      padding: $results__padd;
+    }
+
+    .pagination__btn {
+      background-color: #f9f5f3;
+      color: $main__color;
+      border-radius: $main__border-ra;
+      padding: 10px 15px;
+      text-align: center;
+      transition: $main__transition;
+      cursor: pointer;
+      font: {
+        size: 0.9rem;
+        weight: bold;
+      }
+
+      @media #{$minSmall} {
+        padding: 10px;
+        font-size: 0.8rem;
+      }
+
+      @media #{$minMedium} {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+      }
+
+      &:hover {
+        background-color: $main__hover;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+
+        @media #{$minSmall} {
+          width: 15px;
+          height: 15px;
+        }
+
+        @media #{$minMedium} {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    .btn__previous {
+      span {
+        margin-left: 5px;
+        padding-right: 5px;
+      }
+    }
+
+    .curr__page {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-image: $main__gradient;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .btn__next {
+      span {
+        margin-right: 5px;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  // copyright
+  .copy__right {
+    text-align: center;
+    padding: 1rem 1.5rem;
+    color: rgba($seconed__color, 0.8);
+
+    p {
+      margin-bottom: 5px;
+    }
+
+    span,
+    a {
+      color: $seconed__color;
+      font-weight: bold;
+    }
+  }
+}

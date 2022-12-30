@@ -1,0 +1,201 @@
+@use "./base.scss" as *;
+@use "./mixins.scss" as *;
+
+.upload__recipe {
+  .overlay {
+    @include overlay-upload(0, 0, rgba(#000, 0.5), 100%, 100%);
+    backdrop-filter: blur(3px);
+    transition: $main__transition;
+  }
+
+  .upload {
+    @include overlay-upload(50%, 50%, #fff, 70%, 35rem);
+    transform: translate(-50%, -50%);
+    padding: 3rem;
+    border-radius: 10px;
+    overflow: auto;
+
+    @media #{$maxMobail} {
+      width: 98%;
+      padding: 3rem 1.5rem;
+    }
+
+    @media #{$minSmall} {
+      width: 93%;
+      padding: 2rem;
+    }
+
+    @media #{$minMedium} {
+      width: 85%;
+      padding: 3rem;
+    }
+
+    @media #{$minLarge} {
+      width: 70%;
+    }
+
+    &__close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: $seconed__color;
+      cursor: pointer;
+      transition: $main__transition;
+      font: {
+        size: 1.5rem;
+        weight: bold;
+      }
+
+      @media #{$maxMobail} {
+        top: 10px;
+        right: 10px;
+      }
+
+      &:hover {
+        color: $main__color;
+      }
+    }
+
+    form {
+      width: 100%;
+
+      .main__data {
+        margin-bottom: 3rem;
+
+        @media #{$maxMobail} {
+          margin-bottom: 27rem;
+        }
+
+        // FOR BOTH RECIPE AND INGREDIENTS
+        h2 {
+          margin-bottom: 2rem;
+          color: $seconed__color;
+          @media #{$maxMobail} {
+            font-size: 1.2rem;
+          }
+        }
+
+        ul {
+          height: 18rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          li {
+            padding: 10px 0;
+
+            &:not(:last-child) {
+              border-bottom: 1px solid #ccc;
+            }
+
+            @media #{$maxMobail} {
+              flex-direction: column;
+              align-items: flex-start;
+            }
+
+            label {
+              font-size: 1.1rem;
+              color: $seconed__color;
+
+              @media #{$maxMobail} {
+                margin-bottom: 10px;
+              }
+            }
+
+            input {
+              width: 150px;
+              padding: 5px 10px;
+              border: 1px solid #ccc;
+              border-radius: 3px;
+              font-size: 1.1rem;
+              transition: $main__transition;
+
+              @media #{$minSmall} {
+                width: 100px;
+              }
+
+              @media #{$minMedium} {
+                width: 150px;
+              }
+
+              &:focus {
+                background-color: rgba($seconed__color, 0.1);
+                outline: none;
+                border: 1px solid #fc503d;
+              }
+            }
+          }
+        }
+        // FOR BOTH RECIPE AND INGREDIENTS
+
+        // RECIPE DATA
+        .upload__recipe-data {
+          width: 35%;
+
+          @media #{$maxMobail} {
+            width: 42%;
+            height: 40rem;
+          }
+
+          li {
+            input {
+              @media #{$maxMobail} {
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        // INGREDIENT DATA
+        .upload__ingredient-data {
+          width: 60%;
+
+          @media #{$maxMobail} {
+            width: 50%;
+            height: 40rem;
+          }
+
+          ul {
+            li {
+              div {
+                @media #{$minSmall} {
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  grid-template-rows: 1fr;
+                  align-items: center;
+                  justify-items: center;
+                  gap: 5px;
+                }
+
+                input {
+                  width: 110px;
+
+                  @media #{$maxMobail} {
+                    width: 130px;
+                  }
+
+                  @media #{$minSmall} {
+                    width: 85px;
+                  }
+
+                  @media #{$minMedium} {
+                    width: 110px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .upload__btn {
+    margin: auto;
+    font-weight: bold;
+
+    svg {
+      fill: #fff;
+    }
+  }
+}

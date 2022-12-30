@@ -1,0 +1,262 @@
+@use "./base.scss" as *;
+@use "./component.scss" as *;
+
+.recipe {
+  width: 65%;
+
+  @media #{$maxMobail} {
+    width: 100%;
+  }
+
+  // IMG
+  &__img {
+    position: relative;
+    transform-origin: center top;
+    margin-bottom: 5rem;
+    height: 20rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: $main__gradient;
+      opacity: 0.6;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .recipe__name {
+      line-height: 1.7;
+      position: absolute;
+      left: 50%;
+      bottom: -20px;
+      transform: translate(-50%, 20%) rotate(-8deg) skew(-8deg);
+      color: #fff;
+      text-align: center;
+      width: 500px;
+      font: {
+        size: 2.4rem;
+        weight: bolder;
+      }
+
+      @media #{$maxMobail} {
+        width: 350px;
+        font-size: 1.5rem;
+      }
+
+      span {
+        box-decoration-break: clone;
+        padding: 0.5rem 1rem;
+        background-image: $main__gradient;
+      }
+    }
+  }
+
+  // SERVINGS
+  &__serving {
+    background-color: #faf6f5;
+
+    @media #{$maxMobail} {
+      padding: 3rem 1.7rem;
+    }
+
+    @media #{$minSmall} {
+      padding: 3rem 1rem;
+    }
+
+    @media #{$minMedium} {
+      padding: 3rem 5rem;
+    }
+
+    .serving {
+      width: 75%;
+      font-size: 1.1rem;
+      color: rgba($seconed__color, 0.8);
+
+      @media (min-width: 515px) and (max-width: 767px) {
+        justify-content: space-between;
+      }
+
+      @media (max-width: 514px) {
+        justify-content: flex-start;
+      }
+
+      @media #{$minSmall} {
+        width: 80%;
+      }
+
+      @media #{$minLarge} {
+        width: 65%;
+      }
+
+      .serving__time {
+        margin-bottom: 0;
+
+        @media (max-width: 514px) {
+          margin-bottom: 1rem;
+        }
+
+        @media (min-width: 515px) and (max-width: 767px) {
+          margin-bottom: 0;
+        }
+      }
+
+      svg {
+        margin-right: 10px;
+      }
+
+      span {
+        font-weight: bold;
+        color: $seconed__color;
+      }
+
+      .operations__icon {
+        margin-left: 15px;
+
+        svg {
+          cursor: pointer;
+          transition: all 0.5s;
+          margin-right: 3px;
+
+          &:hover {
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+
+    .serving__bookmark {
+      width: 40px;
+      height: 40px;
+      background-image: $main__gradient;
+      border-radius: 50%;
+      transition: all 0.3s;
+      cursor: pointer;
+
+      @media (max-width: 514px) {
+        margin-top: 30px;
+      }
+
+      &:hover {
+        transform: scale(1.08);
+      }
+
+      svg {
+        fill: #fff;
+        margin-right: 0;
+      }
+    }
+
+    .upload__recipe {
+      @extend .serving__bookmark;
+      background-image: none;
+      background-color: $main__hover;
+      margin-right: 10px;
+
+      svg {
+        fill: $main__color;
+      }
+    }
+  }
+
+  // INGREDIENTS
+  &__ingredient {
+    background-color: #f2efeee0;
+
+    @media (min-width: 515px) and (max-width: 767px) {
+      padding: 3rem 1rem 3rem 10rem;
+    }
+
+    @media (max-width: 514px) {
+      padding: 3rem 1rem 3rem 5rem;
+    }
+
+    @media #{$minSmall} {
+      padding: 3rem 1rem;
+    }
+
+    @media #{$minMedium} {
+      padding: 3rem 5rem;
+    }
+
+    .ingredient__title {
+      @extend %recipe__title;
+
+      @media #{$maxMobail} {
+        text-align: left;
+      }
+    }
+
+    .ingredient__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 3rem;
+      color: $seconed__color;
+
+      @media #{$maxMobail} {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .ingredient__item {
+        display: flex;
+
+        svg {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+          flex: 0 0 auto;
+        }
+
+        .ingredient__quantity {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  // HOW TO COOK IT
+  .origin__recipe {
+    text-align: center;
+    flex-direction: column;
+    height: 340px;
+    padding: 4rem 2rem;
+
+    @media #{$minMedium} {
+      padding: 4rem 7rem;
+    }
+
+    .origin__recipe--title {
+      @extend %recipe__title;
+      margin-bottom: 0;
+    }
+
+    p {
+      color: rgba($seconed__color, 0.8);
+      font-size: 1.2rem;
+
+      span {
+        font-weight: bold;
+        color: rgba(#222, 0.8);
+      }
+    }
+
+    .origin__recipe--btn {
+      a {
+        color: #fff;
+      }
+
+      svg {
+        margin-left: 5px;
+        fill: #fff;
+      }
+    }
+  }
+}

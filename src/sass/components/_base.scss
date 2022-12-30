@@ -1,0 +1,44 @@
+// variables
+$main__gradient: linear-gradient(to top left, #f48a82, #fbd789);
+$main__border-ra: 30px;
+$main__color: #f48a82;
+$seconed__color: #444;
+$main__hover: rgba(229, 226, 226, 0.61);
+$results__padd: 15px 40px;
+$main__transition: all 0.5s;
+
+$maxMobail: "(max-width: 767px)";
+$minSmall: "(min-width: 768px)";
+$minMedium: "(min-width: 992px)";
+$minLarge: "(min-width: 1200px)";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  font: {
+    family: "Nunito", sans-serif;
+    weight: 500;
+  }
+  background-image: $main__gradient;
+  min-height: 100vh;
+}
+
+.container {
+  @media #{$minSmall} {
+    width: 750px;
+  }
+  @media #{$minMedium} {
+    width: 970px;
+  }
+  @media #{$minLarge} {
+    width: 1170px;
+  }
+
+  background-color: #f9f5f3;
+  border-radius: 10px;
+  margin: 50px auto;
+}

@@ -1,0 +1,18 @@
+// for flex
+@mixin flex($justify) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+// similar property in both overlay and upload class in uploadRecipe file
+@mixin overlay-upload($top, $left, $bg, $width, $height) {
+  position: fixed;
+  top: $top;
+  left: $left;
+  background-color: $bg;
+  width: $width;
+  height: $height;
+  z-index: 20000;
+}

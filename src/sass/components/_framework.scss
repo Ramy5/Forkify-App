@@ -1,0 +1,31 @@
+@use "./mixins.scss" as *;
+
+.un-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.reset__link {
+  text-decoration: none;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.d__flex {
+  display: flex;
+}
+
+.d__flex-bt {
+  @include flex(space-between);
+}
+
+.d__flex-c {
+  @include flex(center);
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,8 @@
+@use "./components/_base.scss" as *;
+@use "./components/_framework.scss" as *;
+@use "./components/_component.scss" as *;
+
+@use "./components/_navbar.scss";
+@use "./components/_searchResults.scss";
+@use "./components/_recipe.scss";
+@use "./components/uploadRecipe.scss";
