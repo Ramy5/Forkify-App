@@ -1,4 +1,4 @@
-# Forkify__App (Modern and advanced application)
+# Forkify__App (Practicing on JavaScript)
 Searching for recipes food, getting the results from API, displaying these results, bookmarking favorite recipes, using local storage to store them, using classes, modules, promises, async-await, parcel, project architecture, and more ;)
 
 ## Table of Contents
